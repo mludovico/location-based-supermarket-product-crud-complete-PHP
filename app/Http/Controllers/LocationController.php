@@ -103,4 +103,9 @@ class LocationController extends Controller
         $deleted = $this->LocationObj->destroy($id);
         return $deleted ? "OK deleting Location $id" : "FAIL deleting Location $id";
     }
+
+    public function getData()
+    {
+      return json_encode($this->LocationObj->all());
+    }
 }
